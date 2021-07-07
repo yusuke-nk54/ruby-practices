@@ -9,7 +9,7 @@
   elsif x % 5 == 0
     puts "Buzz"
   else
-    puts x
+    puts y
   end
 
 end
