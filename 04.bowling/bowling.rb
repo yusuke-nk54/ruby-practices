@@ -14,15 +14,12 @@ end
 
 frames = []
 shots.each_slice(2) do |s|
-  frames <<
-    if s == [10, 0]
-      [s.shift]
-    else
-      s
-    end
+  frames << s
 end
 
+pp frames
 point = 0
+# pp frames.sum
 frames.each_with_index do |frame, idx|
   if frame[0] == 10 && idx <= 8
     point += frames[idx + 2][0] if frames[idx + 1][0] == 10
