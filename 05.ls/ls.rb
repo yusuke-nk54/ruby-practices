@@ -20,3 +20,28 @@ ls.each_with_index do |name ,idx|
   end
 end
 puts "\n"
+
+
+
+mold = []
+ls.each_slice(3) do |l|
+  mold << l
+end
+
+flatten_mold = mold.map {|m| m.values_at(0...3)}.flatten
+
+# p mold.flatten
+
+car = []
+flatten_mold.each_slice(flatten_mold.size / 3) do |o|
+  car << o
+end
+neko = car.transpose
+p neko
+
+neko.each do |m|
+  m.each do |k|
+    print k.to_s.ljust(24)
+  end
+  print "\n"
+end
